@@ -1,0 +1,14 @@
+project: default
+source:
+  repoURL: 'https://github.com/frode68/argo01.git'
+  path: ./
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: voteapp
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
